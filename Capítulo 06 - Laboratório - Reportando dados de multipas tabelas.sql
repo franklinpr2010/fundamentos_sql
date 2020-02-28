@@ -1,9 +1,4 @@
-------------------------------------------------------------------------------------------------------------------------------------------------------
---                                           Capítulo 06 Laboratório - Reportando dados de multiplas tabelas                                        --
---                                               Treinamento para certificação Fundamentals SQL Oracle                                              --
---                                           Pedro F. Carvalho - DBA / Analista de Sistemas / Desenvolvedor                                         --
---                                         Site : www.pedrofcarvalho.com.br   E-mail : contato@pedrofcarvalho.com.br                                --
-------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 /* Exercício 01 
 Escreva uma consulta para o departamento de RH para produzir os endereços de todos os departamentos.
@@ -21,6 +16,8 @@ natural join countries; -- mesmo tipo de dado e mesmo nome da coluna
 O departamento de RH precisa de um relatório de todos os funcionários. Escreva uma consulta para exibir o último
 Nome, número de departamento e nome do departamento para todos os funcionários.
 */
+
+using é equivalente ao on do inner join
 select last_name, department_id, department_name
 from employees
 join departments 
