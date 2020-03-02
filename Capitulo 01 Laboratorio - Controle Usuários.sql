@@ -23,7 +23,7 @@ Se você quer criar uma tabela e quer passar esse privilégio as demais pessoas qu
 */
 
 with grant option
-grant select on hr.departments to X with grant option
+grant select on hr.departments to USUARIO with grant option
 
 
 /* Exercício 04
@@ -102,6 +102,7 @@ Com o usuário A1 crie outra tabela e de permissão de select, insert e update par
 /* Exercício 10
 Revogue os mesmos privilégios do exercício 09
 */
+revoke select on a1teste from a2;
 
 
 /* Exercício 11
@@ -117,12 +118,6 @@ Revoke os privilegios do exercício 11
 revoke select, insert on hr.departments from a1;
 
 
--- Passos de estudos
--- 1 - Assistir esta video aula 1x
--- 2 - Assistir a video aula agora fazendo os scritps 1x
--- 5 - Realizar o simulado online
-       
--- Abraços e bons estudos !
        
 
 
