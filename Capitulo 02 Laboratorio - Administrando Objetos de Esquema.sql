@@ -1,12 +1,4 @@
-------------------------------------------------------------------------------------------------------------------------------------------------------
---                                    Capitulo 02 - Laboratório - Sql Expert - Administrando Objetos de Esquema                                     --
---                                               Treinamento para certificação Fundamentals SQL Oracle                                              --
---                                           Pedro F. Carvalho - DBA / Analista de Sistemas / Desenvolvedor                                         --
---                                         Site : www.pedrofcarvalho.com.br   E-mail : contato@pedrofcarvalho.com.br                                --
-------------------------------------------------------------------------------------------------------------------------------------------------------
 
-      
--- Abraços e bons estudos !
        
 /* Exercício 01
 Crie uma tabela DEPT2 baseado na tabela abaixo. E depois verifique sua estrutura.
@@ -20,7 +12,7 @@ Data type             NUMBER      VARCHAR2
 Length                7           25
 */
 drop table dept2;
-create table dept2( id number(7), noome varchar(25));
+create table dept2( id number(7), nome varchar(25));
 desc dept2;
 
 
@@ -150,6 +142,9 @@ desc emp2
 
 /* Exercício 16
 Apague a tabela emp2 e dept2 com o comando purge e depois verifique na reciclebin*/
+
+purge não consegue recuperar com flashback
+
 drop table emp2 purge;
 drop table dept2 purge;
 
@@ -181,12 +176,12 @@ CREATE TABLE library_items_ext ( category_id number(12)
 )
 ORGANIZATION EXTERNAL
 (TYPE ORACLE_LOADER
-DEFAULT DIRECTORY emp_dir
-ACCESS PARAMETERS (RECORDS DELIMITED BY NEWLINE
+DEFAULT DIRECTORY emp_dir /* Direciona para um diretório especifico os dados */
+ACCESS PARAMETERS (RECORDS DELIMITED BY NEWLINE /* Os dados vão ser cadastrados por linha */
 FIELDS TERMINATED BY ',')
-LOCATION ('library_items.dat')
+LOCATION ('library_items.dat') /* Adiciona nesse arquivo */
 )
-REJECT LIMIT UNLIMITED;
+REJECT LIMIT UNLIMITED; /* se colocar 300, não pode cadastrar mais que 300 registros */
 
 
 
@@ -218,10 +213,12 @@ insert into emp_books values (300, 'Organização');
 insert into emp_books values (300, 'Histórico'); -- erro de constraint
 delete * from emp_books
 
+--Não permite dados duplicados
 set constraint emp_books_pk deferred;
 
 alter table emp_books drop constraint emp_books_pk
 
+--Permite dados duplicados
 alter table emp_books add (constraint emp_books_pk primary key(book_id) deferrable);
 
 select * from emp_books
@@ -234,13 +231,6 @@ insert into emp_books values (300, 'Histórico'); -- erro de constraint
 set constraint emp_books_pk deferred;
 
 commit;
-
-
--- Passos de estudos
--- 1 - Assistir esta video aula 1x
--- 2 - Assistir a video aula agora fazendo os scritps 1x
--- 5 - Realizar o simulado online
-
 
 
 

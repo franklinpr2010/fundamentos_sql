@@ -1,9 +1,3 @@
-------------------------------------------------------------------------------------------------------------------------------------------------------
---                                    Capitulo 03 - Laboratório - Sql Expert - Administrando View com Dicionário de Dados                           --
---                                               Treinamento para certificação Fundamentals SQL Oracle                                              --
---                                           Pedro F. Carvalho - DBA / Analista de Sistemas / Desenvolvedor                                         --
---                                         Site : www.pedrofcarvalho.com.br   E-mail : contato@pedrofcarvalho.com.br                                --
-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* Exercício 01
 Consulte as tabelas do dicionário de dados */
@@ -11,7 +5,7 @@ Consulte as tabelas do dicionário de dados */
 select * from user_tables; -- all_tables dba_tables
 
 /* Exercício 02
-Consulte as tabelas do dicionário de dados que você tem acesso*/
+Consulte as tabelas do dicionário de dados que você tem acesso, tabelas que estão no dicionário de dados*/
 
 select * from all_tables;
 
@@ -102,13 +96,6 @@ create table sales_dept
    location varchar(30));
    
 select * from user_indexes;   
-
-
-
--- Passos de estudos
--- 1 - Assistir esta video aula 1x
--- 2 - Assistir a video aula agora fazendo os scritps 1x
--- 5 - Realizar o simulado online
 
 
 
