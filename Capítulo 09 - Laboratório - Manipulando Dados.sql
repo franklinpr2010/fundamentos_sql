@@ -118,7 +118,7 @@ commit;
 Insira mais um registro na tabela usando variaveis de substituição.
 O id é numero
 O last_name e first_name pode ser o mesmo nome.
-O userid será a primeira letrado first_name concatenado com a posição 1 a 7 do last_name.
+O userid será a primeira letra do first_name concatenado com a posição 1 a 7 do last_name.
 O salario a desejar
 */
 

@@ -19,6 +19,7 @@ Confirme os dados desta view
 
 select * from hr.employees_vu;
 
+//Descrição da tabela
 desc hr.employees_vu;
 
 
@@ -34,6 +35,9 @@ from hr.employees_vu
 Crie uma view chamdada detp50 com os ids, last_name, department_id e os cabeçalhos como EMPNO, EMPLOYEE e DEPTNO.
 Para a segurança não permita que seja alterado dados do departamento 50
 */
+
+ with check option constraint - só vai deixar fazer dentro do departamento igual a 50;
+
 drop view hr.dept50;
 create or replace view hr.dept50 as
   select employee_id empno, last_name employee, department_id deptno
@@ -85,6 +89,8 @@ select * from hr.dept
 Crie um índice para a coluna nome da tabela dept
 */
 
+Você pode criar um índice rowstore antes que haja dados na tabela. Use um índice rowstore para melhorar o desempenho de consulta, especialmente quando as consultas forem selecionadas de colunas específicas ou exigirem que os valores sejam classificados em uma ordem específica.
+
 create index dept_name_idx on hr.dept(nome);
 
 
@@ -97,14 +103,6 @@ create synonym de for hr.dept;
 select * from de
 
 
--- Passos de estudos
--- 1 - Assistir a video aula somente observando 1x
--- 2 - Assistir a video aula agora fazendo os scritps 1x
--- 3 - Assistir a video aula de laboratório 1x
--- 4 - Assistir a video aula de laboratório fazendo os scritps 1x
--- 5 - Realizar o simulado online
-       
--- Abraços e bons estudos !
        
 
 

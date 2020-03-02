@@ -22,6 +22,7 @@ após isso confirme a estrutura da tabela
 drop table hr.dept;
 create table hr.dept (id number(7) constraint department_id_pk PRIMARY KEY, nome VARCHAR2(25));
 
+//describe e desc mostra a estrutura da tabela
 desc hr.dept;
 describe hr.dept;
 
@@ -53,6 +54,8 @@ Length              7         25                  25                  7
 
 após isso confirme a estrutura da tabela
 */
+
+//criando com foreign key
 
 create table hr.dept2
   ( id number(7),
@@ -112,7 +115,7 @@ Drope a tabela employees2
 
 Drop table hr.employees2;
 
-
+selecionar apenas aquelas que estão no esquema HR
 -- TABELAS QUE ESTÃO EM MODO SOMENTE LEITURA
 select * from dba_tables
 where owner = 'HR'
