@@ -204,16 +204,14 @@ UPDATE emp3 SET department_id = 50
 WHERE last_name = 'Popp';
 COMMIT;
 
+caaso queira saber o histórico de atualização de uma coluna.
+
 SELECT VERSIONS_STARTTIME "START_DATE", VERSIONS_ENDTIME "END_DATE", DEPARTMENT_ID
 FROM EMP3
 VERSIONS BETWEEN SCN MINVALUE AND MAXVALUE
 WHERE LAST_NAME ='Popp';
 
 
--- Passos de estudos
--- 1 - Assistir esta video aula 1x
--- 2 - Assistir a video aula agora fazendo os scritps 1x
--- 5 - Realizar o simulado online
 
 
 
