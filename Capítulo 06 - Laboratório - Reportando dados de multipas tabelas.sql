@@ -7,6 +7,10 @@ Cidade, estado ou província, e país na saída. Use um NATURAL JOIN para produzir
 os resultados.
 */
 
+- The associated tables have one or more pairs of identically named columns.
+- The columns must be the same data type.
+- Don’t use ON clause in a natural join.
+
 select location_id, street_address, city, state_province, country_name
 from locations
 natural join countries; -- mesmo tipo de dado e mesmo nome da coluna
