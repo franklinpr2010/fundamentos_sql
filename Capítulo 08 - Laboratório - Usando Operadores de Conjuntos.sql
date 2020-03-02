@@ -1,14 +1,10 @@
-------------------------------------------------------------------------------------------------------------------------------------------------------
---                                           Capítulo 08 Laboratório - Usando Operadores de Conjunto                                                --
---                                               Treinamento para certificação Fundamentals SQL Oracle                                              --
---                                           Pedro F. Carvalho - DBA / Analista de Sistemas / Desenvolvedor                                         --
---                                         Site : www.pedrofcarvalho.com.br   E-mail : contato@pedrofcarvalho.com.br                                --
-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* Exercício 01
 O departamento de RH precisa de uma lista de IDs de departamento para departamentos que não contenham
 O ID do trabalho ST_CLERK. Use os operadores set para criar este relatório.
 */
+
+minus - mostra alinha do primeiro select que não estão presente no segundo select
 
 select department_id
 from departments
@@ -54,8 +50,13 @@ where department_id = 20;
 /* Exercício 04
 Crie um relatório que lista os IDs de empregados e os IDs de trabalho dos empregados
 e atualmente têm um título de trabalho que é o mesmo que seu título de trabalho quando eles estavam inicialmente
-contratados pela empresa (ou seja, eles mudaram de emprego, mas agora voltaram a fazer seu trabalho original).
+contratados pela empresa (ou seja, quem atualmente está fazendo a mesma função).
 */
+
+intersect - Retorna linhas distintas comparando os resultados de duas consultas.
+EXCETO retorna linhas distintas da consulta de entrada à esquerda que não são produzidas pela consulta de entrada à direita.
+
+
 
 select employee_id, job_id
 from employees
