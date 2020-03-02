@@ -93,6 +93,8 @@ Crie um relatório que exiba uma lista de todos os funcionários cujo salário é ma
 salário de qualquer funcionário do departamento 60.
 */
 
+any é igual a qualquer um
+
 select last_name, salary
 from employees
 where salary > any (select salary
@@ -110,7 +112,7 @@ from employees
 where department_id in (select department_id
                        from employees
                        where last_name like '%u%')
-and salary >          (select avg(salary) from employees);
+and salary > (select avg(salary) from employees);
 
 -- Passos de estudos
 -- 1 - Assistir a video aula somente observando 1x
