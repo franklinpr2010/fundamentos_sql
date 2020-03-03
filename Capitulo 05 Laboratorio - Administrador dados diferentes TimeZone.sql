@@ -90,6 +90,9 @@ de serviço. Se nenhuma dessas condições corresponderem, imprima talvez no próxim
 os resultados pela coluna HIRE_DATE. Use a tabela de EMPREGADOS.
 Dica: Use as expressões CASE e TO_YMINTERVAL. */
 
+TO_YMINTERVAL converts a character string of CHAR, VARCHAR2, NCHAR, or NVARCHAR2 datatype to an INTERVAL YEAR TO MONTH type.
+TO_YMINTERVAL - SUBTRAI O SYSDATE MENOS O TO_YMINTERVAL(ANO, MES, DIA) QUE REPRESENTA O ANO.
+
 SELECT E.LAST_NAME, HIRE_DATE, SYSDATE,
 (CASE WHEN (SYSDATE - TO_YMINTERVAL('15-0'))>= HIRE_DATE THEN '15 YEARS OF SERVICE'
       WHEN (SYSDATE - TO_YMINTERVAL('10-0'))>= HIRE_DATE THEN '10 YEARS OF SERVICE'

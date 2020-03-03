@@ -9,13 +9,29 @@
 Escreva uma consulta que mostre o último nome, numero do departamento, salario de algum empregado por numero de departamento
 e salario onde possua comissão. Use subquery*/
 
+SELECT LAST_NAME, DEPARTMENT_ID, SALARY 
+FROM EMPLOYEES
+WHERE (SALARY, DEPARTMENT_ID) IN ( SELECT SALARY, DEPARTMENT_ID FROM EMPLOYEE WHERE COMMISSION_PCT IS NOT NULL )
+
 
 /* Exercício 02
-Escreva uma consulta que mostre o último nome, numero do departamento, salario de algum empregado por numero de departamento
-e salario onde possua comissão. Use subquery*/
+exibir o sobrenome, o nome do departamento e o salário de qualquer funcionário cujo o salario e a comissão combina com o salário e a comissão de qualquer empregado localizado
+em localização ID 1700*/
+
+
+select e.last_name, d.department_name, e.salary
+from employees e, departments d
+where e.department_id = d.department_id
+and (salary, nvl(commission_pct, 0) in (select salary, nvl(commission_pct, 0) 
+		from employees e, departments d,
+  		where e.department_id = d.department_id 
+		and d.location_id = 1700);
 
 /* Exercício 03
-Crie uma conuslta que mostre os empregados cujo o salario seja maior que todos do job id sa_man e ordene por salario */
+crie uma consulta para exibir o sobrenome, data de contratação e salario para todos os funcionários
+que tem o mesmo salário e comissão de Kochhar, não exiba o Kochhar no resultado*/
+
+
 
 /* Exercício 04
 Escreva uma consulta que mostre o último nome, numero do departamento, salario de algum empregado por numero de departamento
@@ -57,10 +73,6 @@ Escreva uma consulta para exibir os nomes de departamento dos departamentos cujo
 O custo salarial é superior a um oitavo (1/8) do custo salarial total do conjunto
 Empresa. Use a cláusula WITH para escrever essa consulta. Nomeie a consulta RESUMO.*/
 
--- Passos de estudos
--- 1 - Assistir esta video aula 1x
--- 2 - Assistir a video aula agora fazendo os scritps 1x
--- 5 - Realizar o simulado online
 
 
 
