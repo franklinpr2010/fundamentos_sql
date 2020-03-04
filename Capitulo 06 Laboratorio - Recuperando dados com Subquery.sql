@@ -31,11 +31,23 @@ and (salary, nvl(commission_pct, 0) in (select salary, nvl(commission_pct, 0)
 crie uma consulta para exibir o sobrenome, data de contratação e salario para todos os funcionários
 que tem o mesmo salário e comissão de Kochhar, não exiba o Kochhar no resultado*/
 
+select last_name, hire_date, salary from employees
+where (salary, nvl(commision_pct)) in select salary, nvl(commision_pct, 0) from employees where last_name = 'Kochhar')
+and last_name != 'Kochhar'
+
 
 
 /* Exercício 04
-Escreva uma consulta que mostre o último nome, numero do departamento, salario de algum empregado por numero de departamento
-e salario onde possua comissão. Use subquery*/
+Crie uma consulta para exibir os funcionários que ganham* um salário superior ao
+salario de todos os gerentes de vendas (JOB_ID = 'SA_MAN'). Classifique os resultados em
+salário do mais alto para o mais baixo.*/
+
+
+
+
+
+
+
 
 /* Exercício 05
 Exibir detalhes como o ID do funcionário, o sobrenome e o ID do departamento desses
