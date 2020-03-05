@@ -1,9 +1,4 @@
-------------------------------------------------------------------------------------------------------------------------------------------------------
---                                                          Adicionais Laboratório - Joins                                                          --
---                                               Treinamento para certificação Fundamentals SQL Oracle                                              --
---                                           Pedro F. Carvalho - DBA / Analista de Sistemas / Desenvolvedor                                         --
---                                         Site : www.pedrofcarvalho.com.br   E-mail : contato@pedrofcarvalho.com.br                                --
-------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 /*Exercício 01
 Escrever uma consulta que produza o endereço de todos os departamentos, usando tabelas locations e countries.
@@ -48,6 +43,8 @@ where w.manager_id = m.employee_id;
 /*Exercício 05
 Modificar o relatório acima incluindo o King(ele não possui manager).
 Ordene os resultados pelo numero do empregado*/
+
+left join de outra forma, empregados que não contenha o manager.
 
 select w.last_name "Employee", w.employee_id "EMP#",
        m.last_name "Manager", m.employee_id "MGR#"
@@ -114,12 +111,7 @@ and e.job_id = j.job_id
 and d.location_id = l.location_id;
 
 
--- Passos de estudos
--- 1 - Assistir esta video aula 1x
--- 2 - Assistir a video aula agora fazendo os scritps 1x
--- 5 - Realizar o simulado online
-       
--- Abraços e bons estudos !
+
        
 
 
